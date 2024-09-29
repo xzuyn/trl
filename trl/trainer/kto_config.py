@@ -74,6 +74,8 @@ class KTOConfig(TrainingArguments):
             from a string.
         dataset_num_proc: (`Optional[int]`, *optional*, defaults to `None`):
             Number of processes to use for processing the dataset.
+        use_liger (`Optional[bool]`):
+            Monkey patch the model with Liger kernels to increase throughput and reduce memory usage.
     """
 
     learning_rate: float = 5e-7
@@ -93,3 +95,4 @@ class KTOConfig(TrainingArguments):
     model_init_kwargs: Optional[Dict[str, Any]] = None
     ref_model_init_kwargs: Optional[Dict[str, Any]] = None
     dataset_num_proc: Optional[int] = None
+    use_liger: Optional[bool] = False
