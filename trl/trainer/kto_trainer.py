@@ -54,11 +54,14 @@ from .utils import (
     pad_to_length,
     peft_module_casting_to_bf16,
 )
+from ..import_utils import is_liger_kernel_available
 
 
 if is_peft_available():
     from peft import PeftModel, get_peft_model, prepare_model_for_kbit_training
 
+if is_liger_kernel_available():
+    from liger_kernel.transformers import AutoLigerKernelForCausalLM
 
 if is_wandb_available():
     import wandb
